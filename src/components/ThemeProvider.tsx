@@ -1,7 +1,9 @@
 /* eslint-disable react-refresh/only-export-components */
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext } from "react";
 import { unknown } from "zod";
 import type { Theme } from "../type";
+import { useAtom } from "jotai";
+import { ThemeAtom } from "../state";
 
 const themeContext = createContext({
     theme: "white" as Theme,
@@ -13,7 +15,7 @@ export default function ThemeProvider({
 }: {
     children: React.ReactNode;
 }) {
-    const [theme, setTheme] = useState<Theme>("white");
+    const [theme, setTheme] = useAtom(ThemeAtom);
     return (
         <themeContext.Provider value={{ theme, setTheme }}>
             {children}

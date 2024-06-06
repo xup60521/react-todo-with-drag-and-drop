@@ -4,3 +4,4 @@ export type TodoType = {
     checked: boolean;
     title: string;
 }
+export type DisplayMode = "All" | "Active" | "Completed"

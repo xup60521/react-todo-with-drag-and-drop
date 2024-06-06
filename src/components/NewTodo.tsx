@@ -16,21 +16,21 @@ export default function NewTodo() {
         }
         const id = v4();
         setTodos((prev) => [
+            ...prev,
             {
                 id,
                 title: input,
                 checked,
             },
-            ...prev,
         ]);
-        setInput("")
-        setChecked(false)
+        setInput("");
+        setChecked(false);
     }
 
     return (
         <div
             className={`${theme === "dark" ? "bg-[#25273b]" : "bg-white"} 
-    md:w-[29rem] w-full px-5 rounded flex items-center gap-4 shadow-2xl 
+    md:w-[29rem] w-11/12 px-5 rounded flex items-center gap-4 shadow-2xl 
 `}
         >
             <div
